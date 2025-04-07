@@ -1,8 +1,9 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+const env = process.env.APP_ENV === "PRODUCTION" || "DEV"
 
 function createWindow() {
-    const win = new BrowserWindow({
+    const mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
         webPreferences: {
@@ -11,9 +12,10 @@ function createWindow() {
         }
     })
 
-
-    win.webContents.openDevTools()
-    win.loadFile('./src/index.html')
+    if (env === "DEV"){
+        mainWindow.webContents.openDevTools()
+    }
+    mainWindow.loadFile('./src/index.html')
 }
 
 app.whenReady().then(() => {
