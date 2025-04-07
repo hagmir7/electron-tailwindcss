@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electron + Tailwind</title>
+    <!-- Path is relative to the HTML file location -->
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 min-h-screen">
+    <div class="container mx-auto p-4">
+        <h1 class="electron-title">Hello Electron!</h1>
+        <p class="text-gray-700 dark:text-gray-300 mt-2">
+            Tailwind CSS is working in Electron!
+        </p>
+        <button class="mt-4 px-4 py-2 bg-red-600 hover:bg-red-800 rounded text-white">
+            Click Me
+        </button>
+    </div>
+    <script src="../renderer.js"></script>
+</body>
+
+</html>
